@@ -1,0 +1,23 @@
+1. 去重 distinct
+select Distinct university 
+from user_profile
+
+2. 限制结果数量：使用 LIMIT 子句来限制返回的行数为2。
+select device_id
+from user_profile
+limit 2
+
+3.重命名列：使用 AS 关键字来重命名结果列。
+select device_id As d_id
+from user_profile
+limit 2
+
+4.过滤条件：使用 WHERE 子句来筛选 university 为“北京大学”的记录。
+select device_id, university
+from user_profile
+where university = '北京大学'
+
+5. 过滤条件在某个区间内
+SELECT device_id, gender, age
+FROM user_profile
+WHERE age BETWEEN 20 AND 23;
