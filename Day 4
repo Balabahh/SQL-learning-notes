@@ -1,0 +1,26 @@
+简单过滤条件
+
+1、between 
+where salary between 1000 and 2000;
+
+2、in
+select device_id,gender,age,university,gpa
+from user_profile
+where university in ('北京大学', '复旦大学', '山东大学')
+
+3、筛选满足多个条件
+select device_id,gender,age,university,gpa
+from user_profile
+where (gpa >3.5 and university='山东大学')
+ or(gpa >3.8 and university='复旦大学')
+order by device_id ASC 
+
+4、模糊查找
+select device_id,age,university
+from user_profile
+where university like '北京%'
+
+5、数据汇总 - 筛选出最大值
+select Max(gpa) as gpa
+from user_profile
+where university='复旦大学'
