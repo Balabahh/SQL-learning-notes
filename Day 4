@@ -24,3 +24,14 @@ where university like '北京%'
 select Max(gpa) as gpa
 from user_profile
 where university='复旦大学'
+
+6、Having 对聚合后的结果进行过滤
+having 子句必须和 group by 一起使用
+
+题目：现在运营想查看每个学校用户的平均发贴和回帖情况，寻找低活跃度学校进行重点运营，请取出平均发贴数低于5的学校或平均回帖数小于20的学校。
+select university,
+avg(question_cnt) as avg_question_cnt, 
+avg(answer_cnt) as avg_answer_cnt
+from user_profile
+group by university
+having avg_question_cnt < 5 or avg_answer_cnt<20
