@@ -7,6 +7,7 @@ where salary between 1000 and 2000;
 select device_id,gender,age,university,gpa
 from user_profile
 where university in ('北京大学', '复旦大学', '山东大学')
+注意用的符号是()而不是{}
 
 3、筛选满足多个条件
 select device_id,gender,age,university,gpa
@@ -27,6 +28,7 @@ where university='复旦大学'
 
 6、Having 对聚合后的结果进行过滤
 having 子句必须和 group by 一起使用
+where用于在分组之前进行过滤，having用于在分组(group by)后对组进行过滤
 
 题目：现在运营想查看每个学校用户的平均发贴和回帖情况，寻找低活跃度学校进行重点运营，请取出平均发贴数低于5的学校或平均回帖数小于20的学校。
 select university,
